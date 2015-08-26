@@ -20,7 +20,8 @@ def index_post():
   r = requests.get(quandl + '?api_key=_AnN7yvqekPoP7s1yPJ4')
   data = json.loads(r.text)
   stock = pd.DataFrame[data['dataset']['data']]
-  return pd.concat([stock[stock[0]>'2015-08-01'][0],stock[stock[0]>'2015-08-01'][4]],axis=1)
+  table = pd.concat([stock[stock[0]>'2015-08-01'][0],stock[stock[0]>'2015-08-01'][4]],axis=1)
+  return stock_ticker
 
 if __name__ == '__main__':
   app.debug=True
