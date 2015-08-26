@@ -13,7 +13,7 @@ def index():
 @app.route('/index', methods=['POST'])
 def index_post():
 
-  text = request.form['text']
+  text = str(request.form['stock_ticker'])
   return text
 
 if __name__ == '__main__':
