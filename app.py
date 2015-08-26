@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
+#blah
+
 @app.route('/')
 def main():
   return redirect('/index')
