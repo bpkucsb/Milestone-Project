@@ -10,11 +10,9 @@ def main():
 def index():
   return render_template('index.html')
 
-@app.route('/index_post', methods=['POST'])
+@app.route("/index_post")
 def index_post():
-
-  print("echo")
-  print(request.form['stock_ticker'])
+  return "echo:" + request.args.get('stock_ticker','')
 
 if __name__ == '__main__':
   app.debug=True
