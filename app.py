@@ -31,7 +31,7 @@ def index_post():
 
   show(p)
   
-  return render_template("timesseries.html")
+  return render_template("timeseries.html")
 
 if __name__ == '__main__':
   app.debug=True
