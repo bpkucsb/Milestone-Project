@@ -35,7 +35,7 @@ def plot():
   
   #output_file("timeseries.html")
 
-  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,ylabel='value',legend=True)
+  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,ylabel='blah')
 
   script, div = embed.components(p,CDN)
 

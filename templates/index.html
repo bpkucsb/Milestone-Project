@@ -8,8 +8,11 @@
 	<body>
 		<div>
   		  <h1>Enter here</h1>
-		  <form action="/index_post" method="GET">
-		    <input type="text" name="stock_ticker">
+		  <form action="/plot" method="GET">
+		    Ticker symbol <input type="text" name="stock_ticker"><br>
+		    Closing price <input type="checkbox" name="column" value="Close"><br>
+		    Adjusted closing price <input type="checkbox" name="column" value="Adj. Close"><br>
+		    Volume <input type="checkbox" name="column" value="Volume"><br>
 		    <input type="submit" value="Submit">
 		  </form>
 		</div>
