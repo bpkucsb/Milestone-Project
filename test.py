@@ -33,18 +33,10 @@ def plot():
   stock['Date']=stock['Date'].astype('datetime64')
   columns.append('Date')
   
-  #output_file("timeseries.html")
-
-  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,ylabel='value',legend=True)
+  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,ylabel='value',legend=True,tools='pan,box_zoom,wheel_zoom,reset,save')
 
   script, div = embed.components(p,CDN)
 
-  #head = """ <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.9.0.min.css" type="text/css" /> <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.9.0.min.js"> </script> <script type="text/javascript"> Bokeh.set_log_level("info"); </script> """
-
-  #show(p)
-
-  #  return head, script, div
-  
   return render_template("timeseries.html",script=script,div=div)
 
 if __name__ == '__main__':
