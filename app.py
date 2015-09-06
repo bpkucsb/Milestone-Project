@@ -36,7 +36,7 @@ def plot():
   stock['Date']=stock['Date'].astype('datetime64')
   columns.append('Date')
   
-  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,xlabel='Month/Year',legend=True,tools='pan,box_zoom,wheel_zoom,reset,save')
+  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,xlabel='Month/Day',legend=True,tools='pan,box_zoom,wheel_zoom,reset,save')
 
   script, div = embed.components(p,CDN)
 
