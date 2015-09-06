@@ -25,6 +25,9 @@ def plot():
   stock_ticker = request.args.get('stock_ticker','')
 
   columns = map(str,request.args.getlist('column'))
+
+  if len(columns)==0 or stock_ticker=='':
+    return render_template('/error.html')
   
   quandl='https://www.quandl.com/api/v3/datasets/WIKI/'+stock_ticker+'.json?start_date='+year_prev_month+'-01'
   r = requests.get(quandl + '?api_key=_AnN7yvqekPoP7s1yPJ4')
@@ -33,7 +36,7 @@ def plot():
   stock['Date']=stock['Date'].astype('datetime64')
   columns.append('Date')
   
-  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,ylabel='value',legend=True,tools='pan,box_zoom,wheel_zoom,reset,save')
+  p = TimeSeries(stock[columns],index='Date',title=stock_ticker,xlabel='Month/Year',legend=True,tools='pan,box_zoom,wheel_zoom,reset,save')
 
   script, div = embed.components(p,CDN)
 
